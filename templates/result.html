@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <title>Music Generator</title>
+    <style>
+      body {
+        background-color: #121212; /* 어두운 배경색 */
+        color: #ffffff; /* 밝은 글자색 */
+        display: flex;
+        justify-content: center; /* 가로축 중앙 정렬 */
+        align-items: center; /* 세로축 중앙 정렬 */
+        height: 100vh; /* 전체 높이를 viewport 높이로 설정 */
+        margin: 0; /* 기본 마진 제거 */
+      }
+      .container {
+        text-align: center; /* 텍스트 중앙 정렬 */
+        display: flex; /* Flexbox 사용 */
+        flex-direction: column; /* 세로 방향으로 정렬 */
+        align-items: center; /* 컨테이너 안의 요소들을 가로축 중앙 정렬 */
+        gap: 1rem; /* 요소 간의 간격 추가 */
+      }
+    </style>
+  </head>
+  <body class="container">
+    <h1>Your Music is Ready!</h1>
+    <p>You entered: {{ prompt }}</p>
+    <audio controls>
+      <source src="/output/music.wav" type="audio/wav" />
+      Your browser does not support the audio element.
+    </audio>
+    <br />
+    <a href="{{ url_for('index') }}">Generate Another</a>
+  </body>
+</html>
